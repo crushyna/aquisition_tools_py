@@ -1,0 +1,8 @@
+POL_HOLDER|Policy Holder
+POL_CO_HOLDER|Policy Co-Holder
+INSURED|Insured
+BENEFICIARY|Beneficiary
+PAYOR|Policy Payor
+AGENT|Intermediary of type Agent
+BROKER|Intermediary of type Broker
+BRANCH|Intermediary of type Network resell

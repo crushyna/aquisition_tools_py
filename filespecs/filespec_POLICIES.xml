@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_POLICIES.xml" name="filespec_POLICIES.xml">
+ <lineskip-begin>0</lineskip-begin>
+ <lineskip-end>0</lineskip-end>
+ <lineskip-empty>1</lineskip-empty>
+ <file-encoding>UTF-8</file-encoding>
+ <timefield>RunTimestamp</timefield>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RunTimestamp" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicySourceUniqueID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicySourceRefID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PrimaryCustomerID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CustomerSourceRefID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyHolderName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyCoHolderName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyInsuredName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyPayorName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntermediarySourceUniqueID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntermediarySourceRefID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntermediaryName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BranchID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BranchName" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ProductSourceTypeCode" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ProductSourceTypeDesc" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyStatusCode" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyDuration" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountryCode" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrencyCode" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BeneficiaryClause" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BeneficiaryClauseLastUpdate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SubscriptionDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EffectiveDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SurrenderDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="InitialAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="InstallmentFrequency" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyValueToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SurrenderValueToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="NonAmortizedAmountToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastValueDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalDepositToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalWithdrawalToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalAdvanceToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalReimbursmentToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastWithdrawalAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastWithdrawalDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastAdvanceAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastAdvanceDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastReimbursmentAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastReimbursmentDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastSinglePremiumAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastSinglePremiumDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="OrgUnitCode" fixedlength="FALSE"/>
+</rffilespec>

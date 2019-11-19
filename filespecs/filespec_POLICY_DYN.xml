@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_POLICY_DYN.xml" name="filespec_POLICY_DYN.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicySourceUniqueID" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrencyCode" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PolicyValueToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SurrenderValueToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="NonAmortizedAmountToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastValueDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalDepositToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalWithdrawalToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalAdvanceToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TotalReimbursmentToDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastWithdrawalAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastWithdrawalDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastAdvanceAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastAdvanceDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastReimbursmentAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastReimbursmentDate" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastSinglePremiumAmount" fixedlength="FALSE"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="LastSinglePremiumDate" fixedlength="FALSE"/>
+</rffilespec>
