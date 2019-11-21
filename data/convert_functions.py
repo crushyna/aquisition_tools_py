@@ -2,7 +2,6 @@ import pandas as pd
 import openpyxl
 import xlrd
 import time
-# from data.columns_templates import getColumnsNames
 from data.filespec_extractor import FileSpecsFinder
 
 
