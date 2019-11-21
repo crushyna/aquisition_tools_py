@@ -2,28 +2,29 @@ import sys
 from os import listdir
 from data.convert_functions import ConvertFunctions
 from data.filespec_extractor import *
+from data.ftp_controller_2 import *
 import time
 import os
 import openpyxl
 import xlrd
 
-PROGRAM_VERSION = '0.3'
+PROGRAM_VERSION = '0.5'
 
 templates = FileSpecsFinder.get_dict_of_templates()
-
 
 currentFile = 'none'
 fileTemplate = 'none'
 
 main_menu = True
 while main_menu:
-    print(f"""
+    print("""
     *** Acquisition Tool v{PROGRAM_VERSION} ***
     Select one of options below:
-    1.Load TXT file
-    2.Generate XLSX file
-    3.Generate fixed TXT file
-    4.Exit/Quit
+    1.  Load TXT file
+    2.  Generate XLSX file
+    3.  Generate fixed TXT file
+    4.  Upload data
+    5.  Exit/Quit
     """)
     ans = input("What would you like to do? ")
 
@@ -85,6 +86,13 @@ while main_menu:
             time.sleep(2)
 
     elif ans == "4":
+        print("\n Upload data:")
+        menu_4 = True
+        client = SftpClient(host, port,
+                            username, password, key_file)
+        client.download('/opt/netrevealHome/data/acquisition/currentday.txt', 'data')
+
+    elif ans == "5":
         print("\n Goodbye!")
         main_menu = None
         time.sleep(2)
