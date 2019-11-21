@@ -1,3 +1,4 @@
+'''
 def getColumnsNames(template):
     if template == 'CUSTOMERS':
         return(CUSTOMERS)
@@ -344,3 +345,4 @@ TRANSACTIONS = ['RunTimestamp',
 'CheckAccountNumber',
 'CheckAmount',
 'CashbackAMT']
+'''

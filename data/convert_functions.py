@@ -2,7 +2,8 @@ import pandas as pd
 import openpyxl
 import xlrd
 import time
-from data.columns_templates import getColumnsNames
+# from data.columns_templates import getColumnsNames
+from data.filespec_extractor import FileSpecsFinder
 
 
 class ConvertFunctions:
@@ -11,7 +12,7 @@ class ConvertFunctions:
     def createExcelFile(filename, template):
         try:
             dataframe = pd.read_csv('input/{}'.format(filename), sep='|', na_filter=False, index_col=False, header=None)
-            dataframe.columns = getColumnsNames(template)
+            dataframe.columns = FileSpecsFinder.return_list_of_fieldnames(template)
         except ValueError as ValueErrorMessage:
             print("Transformation error: {}".format(ValueErrorMessage))
             time.sleep(3)

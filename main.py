@@ -81,7 +81,7 @@ while main_menu:
             currentExcelFile = excelFilesDictFixed.get(selectedFileId)
             ConvertFunctions.createTextFromExcelFile(currentExcelFile)
         else:
-            print("Inproper file ID. Try again!")
+            print("Improper file ID. Try again!")
             time.sleep(2)
 
     elif ans == "4":
