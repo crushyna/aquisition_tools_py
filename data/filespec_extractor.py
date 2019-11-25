@@ -14,6 +14,15 @@ class FileSpecsFinder:
         return filespecs_file_list
 
     @staticmethod
+    def get_list_of_filespec_files_NAMES():
+        filenames_fixed = []
+        filespecs_file_list = listdir(r'data/filespecs')
+        for each_filename in filespecs_file_list:
+            filenames_fixed.append(each_filename[9:-4])
+
+        return filenames_fixed
+
+    @staticmethod
     def get_dict_of_templates():
         templates_list = []
         # templates_dict = {}

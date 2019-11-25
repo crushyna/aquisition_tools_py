@@ -10,6 +10,22 @@ import xlrd
 
 PROGRAM_VERSION = '0.5'
 
+host = '10.227.7.120'
+port = 22
+username = 'centos'
+password = 'norkom098'
+key_file = r'data/axagc-openssh'
+local_input = r'input'
+local_output_txt = r'output_txt'
+local_output_xlsx = r'output_xlsx'
+temp_local_currentday = r'data/temp/currentday.txt'
+temp_local_endofday = r'data/temp/endofday.txt'
+remote_currentday = r'/opt/netrevealHome/data/acquisition/currentday.txt'
+remote_endofday = r'/opt/netrevealHome/data/acquisition/endofday.txt'
+remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting'
+upload_local_dir = r'upload_dir'
+
+
 templates = FileSpecsFinder.get_dict_of_templates()
 
 currentFile = 'none'
@@ -70,7 +86,7 @@ while main_menu:
     elif ans == "3":
         print("\n Generate fixed TXT file:")
         menu_3 = True
-        excelFilesList = listdir('output_xlsx')
+        excelFilesList = listdir(local_output_xlsx)
         excelFilesNumber = len(excelFilesList)
         excelFilesDict = dict(zip(excelFilesList, range(excelFilesNumber)))
         excelFilesDictFixed = {v: k for k, v in excelFilesDict.items()}
@@ -88,9 +104,43 @@ while main_menu:
     elif ans == "4":
         print("\n Upload data:")
         menu_4 = True
-        client = SftpClient(host, port,
-                            username, password, key_file)
-        client.download('/opt/netrevealHome/data/acquisition/currentday.txt', 'data')
+
+        # check if files even exist and then connect
+        uploadFilesList = listdir(upload_local_dir)
+        uploadFilesNumber = len(uploadFilesList)
+        if uploadFilesNumber > 0:
+
+            # connect to server
+            client = SftpClient(host, port,
+                                username, password, key_file)
+
+            # download currentday and endofday files
+            client.download(remote_currentday, temp_local_currentday)
+            client.download(remote_endofday, temp_local_endofday)
+
+            temp_currentday = ConvertFunctions.returnValueFromTxt(temp_local_currentday)
+            print(temp_currentday)
+            temp_endofday = ConvertFunctions.returnValueFromTxt(temp_local_endofday)
+            print(temp_endofday)
+
+            answer = str(input(f"Found {uploadFilesNumber} files. Proceed? [Y/n] "))
+            if answer in ('Y', 'y', 'yes'):
+
+                # fun starts here
+                result = DataUploader.check_file_names(uploadFilesList, uploadFilesNumber)
+                if result == 1:
+                    DataUploader.mass_uploader(uploadFilesList, temp_currentday, temp_endofday)
+                else:
+                    print("Files not named properly! Please fix their names before using uploader!")
+                    pass
+
+            else:
+                pass
+
+        else:
+            print("No files to upload!")
+            time.sleep(2)
+            pass
 
     elif ans == "5":
         print("\n Goodbye!")

@@ -3,8 +3,23 @@ import time
 import errno
 import logging
 
+from data.filespec_extractor import FileSpecsFinder
+
 logging.basicConfig(format='%(levelname)s : %(message)s',
                     level=logging.INFO)
+
+# HAVE NO IDEA HOW TO INPUT THIS OTHER WAY (where to get from), SO IT'S HARDCODED FOR NOW
+acquisition_order = {1: ['PARTY_ROLE', 'POLICY_STATUS'],
+                     2: ['INTERMEDIARIES', 'INTERMEDIARY_TYPE'],
+                     3: ['CUSTOMER_CATEGORY', 'CUSTOMER_STATUS'],
+                     4: ['CUSTOMER_TYPE'],
+                     5: ['COUNTRY'],
+                     6: ['CUSTOMERS'],
+                     7: ['PRODUCT'],
+                     8: ['PRODUCT_SOURCE_TYPE'],
+                     9: ['POLICIES]'],
+                     10: ['CUSTOMER_POLICY_LINK', 'INTERMEDIARY_POLICY_LINK'],
+                     11: ['OPERATIONS']}
 
 
 class SftpClient:
@@ -65,6 +80,51 @@ class SftpClient:
 
     def close(self):
         self._connection.close()
+
+
+class DataUploader:
+
+    @staticmethod
+    def check_file_names(file_list: list, files_number: int):
+        control_sum = 0
+        filespecs_list_named = FileSpecsFinder.get_list_of_filespec_files_NAMES()
+        print(f"Names accepted: {filespecs_list_named}")
+        for each_filename in file_list:
+            print(f"Filename check: {each_filename[:-13]}")
+            if each_filename[:-13] in filespecs_list_named:
+                control_sum += 1
+            else:
+                pass
+        if control_sum == files_number:
+            print("All files are OK!")
+            time.sleep(1)
+            return 1
+        else:
+            return 0
+
+    @staticmethod
+    def mass_uploader(file_list: list, temp_current_day: int, temp_end_of_day: int):
+        current_year = temp_current_day[:4]
+        current_month = temp_current_day[4:6]
+        current_day = temp_current_day[6:]
+        print(current_year, current_month, current_day)
+
+        # for each_key, each_list in acquisition_order.items():
+        #    print(each_key, each_list)
+        for each_key, each_list in acquisition_order.items():
+            i = 0
+            for each_filename in file_list:
+                file_to_upload = each_filename[:-13]
+                print(file_to_upload)
+                print(acquisition_order[i])
+                if file_to_upload in (acquisition_order[i]):
+                    print(f"Matched: {file_to_upload} with list {acquisition_order[i]}")
+                    i += 1
+                    continue
+                else:
+                    print("No match!")
+                    i += 1
+                    continue
 
 
 if __name__ == '__main__':
