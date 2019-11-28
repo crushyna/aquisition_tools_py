@@ -31,7 +31,7 @@ templates = FileSpecsFinder.get_dict_of_templates()
 currentFile = 'none'
 fileTemplate = 'none'
 
-main_menu = True
+main_menu = 1
 while main_menu:
     print("""
     *** Acquisition Tool v{PROGRAM_VERSION} ***
@@ -119,9 +119,9 @@ while main_menu:
             client.download(remote_endofday, temp_local_endofday)
 
             temp_currentday = ConvertFunctions.returnValueFromTxt(temp_local_currentday)
-            print(temp_currentday)
+            # print(temp_currentday)
             temp_endofday = ConvertFunctions.returnValueFromTxt(temp_local_endofday)
-            print(temp_endofday)
+            # print(temp_endofday)
 
             answer = str(input(f"Found {uploadFilesNumber} files. Proceed? [Y/n] "))
             if answer in ('Y', 'y', 'yes'):
@@ -129,7 +129,7 @@ while main_menu:
                 # fun starts here
                 result = DataUploader.check_file_names(uploadFilesList, uploadFilesNumber)
                 if result == 1:
-                    DataUploader.mass_uploader(uploadFilesList, temp_currentday, temp_endofday)
+                    DataUploader.mass_uploader(uploadFilesList, temp_currentday, temp_endofday, upload_local_dir)
                 else:
                     print("Files not named properly! Please fix their names before using uploader!")
                     pass
