@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_PAYMENTS.xml" name="filespec_PAYMENTS.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RunTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SourcePaymUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SourcePaymNum" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DebitCreditCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PaymentTypeCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PaymentChannelCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Description" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SourceSystemCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="WebEventId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrencyCodeOrig" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrencyCodeBase" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AmountRequestedOrig" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AmountActualOrig" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AmountBase" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SystemTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EffectiveTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OriginationTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LocalTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ValueTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PostingDate" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BatchId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BatchNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountOfPayments" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TellerId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BranchId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SenderReference" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PartOfBundle" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="MessageType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PaymentNetwork" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="MalwareFoundFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DualControlFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OutOfBandFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SavedBeneficiaryFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TraceNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ForeignTraceNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TransactionReturnCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SecCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Direction" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OwnAccountTransfer" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustomerSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustomerSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustOrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustAddress" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustCity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustRegion" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustPostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrCustCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountRoutingNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrAccountType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrSortCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrIban" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBic" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankAddress" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankCity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankRegion" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankPostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CrBankCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustomerSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustomerSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustOrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustAddress" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustCity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustRegion" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustPostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbCustCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountRoutingNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountNo" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbAccountType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbSortCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbIban" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBic" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankAddress" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankCity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankRegion" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankPostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DbBankCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OnlineUserSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OnlineUserSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Imei" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="Imsi" fixedlength="false"/>	
+</rffilespec>

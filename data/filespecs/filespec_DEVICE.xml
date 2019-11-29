@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_DEVICE.xml" name="filespec_DEVICE.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceDesc" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceModel" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceStatus" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BranchId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BusinessName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Address" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Zone" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BusinessSegment" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RegisteredNum" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TaxNum" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpAddress" fixedlength="false"/>
+    <rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="City" fixedlength="false"/>
+</rffilespec>

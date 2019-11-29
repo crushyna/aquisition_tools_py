@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_CUSTOMER_PHONES.xml" name="filespec_CUSTOMER_PHONES.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CustomerSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrentNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AreaCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneExtension" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BusinessUse" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneNumberType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="MainNumberFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ValidFrom" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="ValidTo" fixedlength="false"/>
+</rffilespec>

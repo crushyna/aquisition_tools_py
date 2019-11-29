@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_CARD.xml" name="filespec_CARD.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardSourceRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IssuingBankCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IssueDate" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="ExpiryDate" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SequenceNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LanguagePreferenceCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardStatus" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardStatusChangedTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PasswordChangedTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardHolderName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardHolderTitle" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardHolderFirstName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardHolderLastName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LimitClass" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LimitClassChangedTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RegistrationChangedTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardLimit" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CardBalance" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CurrencyCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="CustomerSourceUniqueId" fixedlength="false"/>
+</rffilespec>

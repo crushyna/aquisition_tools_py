@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_INTELLIGENCE.xml" name="filespec_INTELLIGENCE.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceSrcUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceSrcRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceSource" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceReason" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RunTimestamp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligencePriority" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceSeverity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IntelligenceText" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EntityName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EntitySrcUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EntitySrcRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PersonTitle" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="FirstName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="MiddleNames" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="LastName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Suffix" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CustomerName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CompanyName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RegisteredNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DateOfBirth" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Address" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Zone" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PostalCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="City" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneAreaCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="PhoneExtension" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Email" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IdentificationNumber" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IdentificationType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="WebSessionIdentifier" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceIdentifier" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="DeviceFingerprint" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Imei" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Imsi" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpAddress" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpOrgName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpIsp" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpDomain" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpCity" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpCountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpRegion" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpLatitude" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpLongitude" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpRange" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpMaliciousFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="IpConfirmedFraudFlag" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="IpAnonymousFlag" fixedlength="false"/>
+</rffilespec>
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_TRANSACTIONS_datasource.xml" name="filespec_TRANSACTIONS_datasource.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>  0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+        <file-encoding>UTF-8</file-encoding>
+
+	<keyfield>TransactionID</keyfield>
+	<timefield>RunDate</timefield>
+
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RunDate" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="RegisterDate" fixedlength="false"/>
+	<rfrecordspec datatype="AMOUNT" fieldDelimiter="|" fieldname="AmountCurrency" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Currency" fixedlength="false"/>
+	<rfrecordspec datatype="AMOUNT" fieldDelimiter="|" fieldname="AmountBaseCurrency" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CreditOrDebit" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TransactionId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TransactionType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AccountId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AccountType" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CustomerId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CustomerSegment" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="BranchId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="EmployeeId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SecondPartyCountry" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SecondPartyAccount" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SecondPartyName" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="SecondPartyBic" fixedlength="false"/>
+	<rfrecordspec datatype="AMOUNT" fieldDelimiter="|" fieldname="AccountBalance" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="OrganisationalUnit" fixedlength="false"/>
+</rffilespec>

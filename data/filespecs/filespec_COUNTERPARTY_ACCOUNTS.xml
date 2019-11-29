@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Unpublished Work © 2012 Detica Solutions Limited (Ireland). All rights Reserved.
+-->
+<rffilespec comments="filespec_COUNTERPARTY_ACCOUNTS.xml" name="filespec_COUNTERPARTY_ACCOUNTS.xml">
+	<lineskip-begin>0</lineskip-begin>
+	<lineskip-end>0</lineskip-end>
+	<lineskip-empty>1</lineskip-empty>
+	<file-encoding>UTF-8</file-encoding>
+<!--	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CpartyAccountId" fixedlength="false"/> -->
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CpartyAccountSrcUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CpartyAccountSrcRefId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CounterpartySrcUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="OrgUnitCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="AccountHoldingCustomerSourceUniqueId" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="CountryCode" fixedlength="false"/>
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="TransactionalAccountSrcUniqueId" fixedlength="false"/>	
+	<rfrecordspec datatype="TEXT" fieldDelimiter="|" fieldname="Iban" fixedlength="false"/>		
+	<rfrecordspec datatype="TEXT" fieldDelimiter="" fieldname="Bic" fixedlength="false"/>				
+</rffilespec>

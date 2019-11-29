@@ -1,3 +1,5 @@
+from typing import Type
+
 from paramiko import Transport, SFTPClient, RSAKey
 from datetime import date, datetime, timedelta
 import os
@@ -10,6 +12,7 @@ from data.filespec_extractor import FileSpecsFinder
 logging.basicConfig(format='%(levelname)s : %(message)s',
                     level=logging.INFO)
 
+# TODO: get it from JSON?
 # HAVE NO IDEA HOW TO INPUT THIS OTHER WAY (where to get from), SO IT'S HARDCODED FOR NOW
 acquisition_order = {1: ['PARTY_ROLE', 'POLICY_STATUS'],
                      2: ['INTERMEDIARIES', 'INTERMEDIARY_TYPE'],
@@ -19,7 +22,7 @@ acquisition_order = {1: ['PARTY_ROLE', 'POLICY_STATUS'],
                      6: ['CUSTOMERS'],
                      7: ['PRODUCT'],
                      8: ['PRODUCT_SOURCE_TYPE'],
-                     9: ['POLICIES]'],
+                     9: ['POLICIES'],
                      10: ['CUSTOMER_POLICY_LINK', 'INTERMEDIARY_POLICY_LINK'],
                      11: ['OPERATIONS']}
 
@@ -105,28 +108,38 @@ class DataUploader:
             return 0
 
     @staticmethod
-    def mass_uploader(file_list: list, temp_current_day: str, temp_end_of_day: str, upload_folder):
-        current_date = datetime(year=int(temp_current_day[0:4]),    # they do return as INT
-                                month=int(temp_current_day[4:6]),
-                                day=int(temp_current_day[6:8]))
+    def cook_upload_files(file_list: list, temp_current_day: str, upload_folder: str):
+        current_date = DataUploader.return_currentday_datetime(temp_current_day)
+        string_date = str
 
         for each_key, each_list in acquisition_order.items():
-
+            print(f'Current key: {each_key}')
             for each_filename in file_list:
                 file_to_upload = each_filename[:-13]
                 # print(file_to_upload)
-                # print(each_list)
+                # print(f'{each_list}\n')
                 if file_to_upload in each_list:
                     print(f"Matched: {file_to_upload} with list {each_list}")
+
                     current_date += timedelta(days=1)
-                    string_date = current_date.strftime("%Y%m%d")
-                    new_filename = str(f"{file_to_upload}_{string_date}.txt")
-                    os.rename(f'{upload_folder}/{each_filename}', f'{upload_folder}/{new_filename}')
-                    time.sleep(1)
-                    # TODO: its not recognizing POLICIES file somehow, fix that!
+                    string_date = '{:04d}'.format(current_date.year) + '{:02d}'.format(
+                        current_date.month) + '{:02d}'.format(current_date.day)
+                    print(string_date)
+
+                    os.rename(f'{upload_folder}/{each_filename}', f'{upload_folder}/{file_to_upload}_{string_date}.txt')
+                    # time.sleep(1)
                     continue
                 else:
                     continue
+
+        return string_date
+
+    @staticmethod
+    def return_currentday_datetime(temp_current_day):
+        current_date = datetime(year=int(temp_current_day[0:4]),  # they do return as INT
+                                month=int(temp_current_day[4:6]),
+                                day=int(temp_current_day[6:8]))
+        return current_date
 
 
 if __name__ == '__main__':
@@ -136,18 +149,5 @@ if __name__ == '__main__':
     password = 'norkom098'
     key_file = r'data/axagc-openssh'
 
-    download_remote_path = r'data'
-    download_local_path = r'test.txt'
-
-    upload_local_path = r'data/test.txt'
-    upload_remote_path = r'/opt/netrevealHome/data/acquisition'
-
     client = SftpClient(host, port,
                         username, password, key_file)
-
-    client.upload(upload_local_path,
-                  upload_remote_path)
-
-    client.download(download_remote_path,
-                    download_local_path)
-    client.close()

@@ -8,22 +8,23 @@ import os
 import openpyxl
 import xlrd
 
-PROGRAM_VERSION = '0.5'
+PROGRAM_VERSION = '0.6'
 
 host = '10.227.7.120'
 port = 22
 username = 'centos'
 password = 'norkom098'
 key_file = r'data/axagc-openssh'
-local_input = r'input'
+local_input = r'input/'
 local_output_txt = r'output_txt'
 local_output_xlsx = r'output_xlsx'
 temp_local_currentday = r'data/temp/currentday.txt'
 temp_local_endofday = r'data/temp/endofday.txt'
 remote_currentday = r'/opt/netrevealHome/data/acquisition/currentday.txt'
 remote_endofday = r'/opt/netrevealHome/data/acquisition/endofday.txt'
-remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting'
-upload_local_dir = r'upload_dir'
+# remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting'
+remote_acquisition = r'/opt/netrevealHome/data/acquisition/test/'
+upload_local_dir = r'upload_dir/'
 
 
 templates = FileSpecsFinder.get_dict_of_templates()
@@ -119,9 +120,7 @@ while main_menu:
             client.download(remote_endofday, temp_local_endofday)
 
             temp_currentday = ConvertFunctions.returnValueFromTxt(temp_local_currentday)
-            # print(temp_currentday)
             temp_endofday = ConvertFunctions.returnValueFromTxt(temp_local_endofday)
-            # print(temp_endofday)
 
             answer = str(input(f"Found {uploadFilesNumber} files. Proceed? [Y/n] "))
             if answer in ('Y', 'y', 'yes'):
@@ -129,7 +128,20 @@ while main_menu:
                 # fun starts here
                 result = DataUploader.check_file_names(uploadFilesList, uploadFilesNumber)
                 if result == 1:
-                    DataUploader.mass_uploader(uploadFilesList, temp_currentday, temp_endofday, upload_local_dir)
+                    new_end_date = DataUploader.cook_upload_files(uploadFilesList, temp_currentday, upload_local_dir)
+
+                    cooked_files = listdir(upload_local_dir)
+                    for each_file in cooked_files:
+                        source = f'{upload_local_dir}/{each_file}'
+                        destination = f'{remote_acquisition}/{each_file}' # TODO: update remote_acquisition to proper location
+                        client.upload(source, destination)
+
+                    with open(temp_local_endofday, 'w+') as new_endofday:
+                        new_endofday.write(new_end_date)
+
+                    client.upload(temp_local_endofday, f'{remote_acquisition}/endofday.txt')    # TODO: update to remote_endofday
+
+
                 else:
                     print("Files not named properly! Please fix their names before using uploader!")
                     pass
