@@ -1,7 +1,5 @@
-from typing import Type
-
 from paramiko import Transport, SFTPClient, RSAKey
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 import os
 import time
 import errno

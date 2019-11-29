@@ -1,10 +1,7 @@
-import sys
-from os import listdir
 from data.convert_functions import ConvertFunctions
 from data.filespec_extractor import *
 from data.ftp_controller_2 import *
 import time
-import os
 import openpyxl
 import xlrd
 
@@ -22,10 +19,9 @@ temp_local_currentday = r'data/temp/currentday.txt'
 temp_local_endofday = r'data/temp/endofday.txt'
 remote_currentday = r'/opt/netrevealHome/data/acquisition/currentday.txt'
 remote_endofday = r'/opt/netrevealHome/data/acquisition/endofday.txt'
-# remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting'
-remote_acquisition = r'/opt/netrevealHome/data/acquisition/test/'
+remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting/'
+# remote_acquisition = r'/opt/netrevealHome/data/acquisition/test/'
 upload_local_dir = r'upload_dir/'
-
 
 templates = FileSpecsFinder.get_dict_of_templates()
 
@@ -34,7 +30,7 @@ fileTemplate = 'none'
 
 main_menu = 1
 while main_menu:
-    print("""
+    print(f"""
     *** Acquisition Tool v{PROGRAM_VERSION} ***
     Select one of options below:
     1.  Load TXT file
@@ -119,6 +115,7 @@ while main_menu:
             client.download(remote_currentday, temp_local_currentday)
             client.download(remote_endofday, temp_local_endofday)
 
+            # turn currentday and endofday into strings
             temp_currentday = ConvertFunctions.returnValueFromTxt(temp_local_currentday)
             temp_endofday = ConvertFunctions.returnValueFromTxt(temp_local_endofday)
 
@@ -129,17 +126,20 @@ while main_menu:
                 result = DataUploader.check_file_names(uploadFilesList, uploadFilesNumber)
                 if result == 1:
                     new_end_date = DataUploader.cook_upload_files(uploadFilesList, temp_currentday, upload_local_dir)
-
                     cooked_files = listdir(upload_local_dir)
+
                     for each_file in cooked_files:
                         source = f'{upload_local_dir}/{each_file}'
-                        destination = f'{remote_acquisition}/{each_file}' # TODO: update remote_acquisition to proper location
+                        # destination = f'{remote_acquisition}/{each_file}' TEST DESTINATION
+                        destination = f'{remote_acquisition}/{each_file}'
                         client.upload(source, destination)
 
+                    # upload cooked files
                     with open(temp_local_endofday, 'w+') as new_endofday:
                         new_endofday.write(new_end_date)
 
-                    client.upload(temp_local_endofday, f'{remote_acquisition}/endofday.txt')    # TODO: update to remote_endofday
+                    # upload new endofday.txt
+                    client.upload(temp_local_endofday, remote_endofday)
 
 
                 else:
