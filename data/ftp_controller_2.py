@@ -139,7 +139,7 @@ class DataUploader:
                                 day=int(temp_current_day[6:8]))
         return current_date
 
-
+'''
 if __name__ == '__main__':
     host = '10.227.7.120'
     port = 22
@@ -149,3 +149,4 @@ if __name__ == '__main__':
 
     client = SftpClient(host, port,
                         username, password, key_file)
+'''

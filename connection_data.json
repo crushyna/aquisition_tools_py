@@ -7,4 +7,4 @@
 	"remote_currentday": "/opt/netrevealHome/data/acquisition/currentday.txt",
 	"remote_endofday": "/opt/netrevealHome/data/acquisition/endofday.txt",
 	"remote_acquisition": "/opt/netrevealHome/data/acquisition/waiting/"
-}	
+}
