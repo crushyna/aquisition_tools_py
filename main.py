@@ -4,8 +4,6 @@ from data.filespec_extractor import *
 from data.ftp_controller_2 import *
 from data.json_controller import JSONController
 import time
-import openpyxl
-import xlrd
 
 
 def resource_path(relative_path):
