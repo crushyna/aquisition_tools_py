@@ -1,0 +1,10 @@
+{
+	"host_ip": "10.227.7.120",
+	"port": 22,
+	"username": "centos",
+	"password": "norkom098",
+	"key_file": "data/axagc-openssh",
+	"remote_currentday": "/opt/netrevealHome/data/acquisition/currentday.txt",
+	"remote_endofday": "/opt/netrevealHome/data/acquisition/endofday.txt",
+	"remote_acquisition": "/opt/netrevealHome/data/acquisition/waiting/"
+}	

@@ -1,6 +1,8 @@
+import sys
 from data.convert_functions import ConvertFunctions
 from data.filespec_extractor import *
 from data.ftp_controller_2 import *
+from data.json_controller import JSONController
 import time
 import openpyxl
 import xlrd
@@ -17,25 +19,18 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
-PROGRAM_VERSION = '0.6'
+PROGRAM_VERSION = '0.7'
 
-host = '10.227.7.120'
-port = 22
-username = 'centos'
-password = 'norkom098'
-key_file = r'data/axagc-openssh'
+templates = FileSpecsFinder.get_dict_of_templates()
+connection_template = 'connection_data.json'
+connection1 = JSONController(connection_template)
+
 local_input = r'input/'
 local_output_txt = r'output_txt'
 local_output_xlsx = r'output_xlsx'
 temp_local_currentday = r'data/temp/currentday.txt'
 temp_local_endofday = r'data/temp/endofday.txt'
-remote_currentday = r'/opt/netrevealHome/data/acquisition/currentday.txt'
-remote_endofday = r'/opt/netrevealHome/data/acquisition/endofday.txt'
-remote_acquisition = r'/opt/netrevealHome/data/acquisition/waiting/'
-# remote_acquisition = r'/opt/netrevealHome/data/acquisition/test/'
 upload_local_dir = r'upload_dir/'
-
-templates = FileSpecsFinder.get_dict_of_templates()
 
 currentFile = 'none'
 fileTemplate = 'none'
@@ -120,12 +115,12 @@ while main_menu:
         if uploadFilesNumber > 0:
 
             # connect to server
-            client = SftpClient(host, port,
-                                username, password, key_file)
+            client = SftpClient(connection1.server_ip, connection1.port,
+                                connection1.username, connection1.password, connection1.key_filename)
 
             # download currentday and endofday files
-            client.download(remote_currentday, temp_local_currentday)
-            client.download(remote_endofday, temp_local_endofday)
+            client.download(connection1.remote_currentday, temp_local_currentday)
+            client.download(connection1.remote_endofday, temp_local_endofday)
 
             # turn currentday and endofday into strings
             temp_currentday = ConvertFunctions.returnValueFromTxt(temp_local_currentday)
@@ -143,7 +138,7 @@ while main_menu:
                     for each_file in cooked_files:
                         source = f'{upload_local_dir}/{each_file}'
                         # destination = f'{remote_acquisition}/{each_file}' TEST DESTINATION
-                        destination = f'{remote_acquisition}/{each_file}'
+                        destination = f'{connection1.remote_acquisition_waiting}/{each_file}'
                         client.upload(source, destination)
 
                     # upload cooked files
@@ -151,7 +146,7 @@ while main_menu:
                         new_endofday.write(new_end_date)
 
                     # upload new endofday.txt
-                    client.upload(temp_local_endofday, remote_endofday)
+                    client.upload(temp_local_endofday, connection1.remote_endofday)
 
 
                 else:
