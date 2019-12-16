@@ -138,15 +138,3 @@ class DataUploader:
                                 month=int(temp_current_day[4:6]),
                                 day=int(temp_current_day[6:8]))
         return current_date
-
-'''
-if __name__ == '__main__':
-    host = '10.227.7.120'
-    port = 22
-    username = 'centos'
-    password = 'norkom098'
-    key_file = r'data/axagc-openssh'
-
-    client = SftpClient(host, port,
-                        username, password, key_file)
-'''
