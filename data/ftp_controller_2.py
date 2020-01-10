@@ -12,17 +12,16 @@ logging.basicConfig(format='%(levelname)s : %(message)s',
 
 # TODO: get it from JSON?
 # HAVE NO IDEA HOW TO INPUT THIS OTHER WAY (where to get from), SO IT'S HARDCODED FOR NOW
-acquisition_order = {1: ['PARTY_ROLE', 'POLICY_STATUS'],
-                     2: ['INTERMEDIARIES', 'INTERMEDIARY_TYPE'],
-                     3: ['CUSTOMER_CATEGORY', 'CUSTOMER_STATUS'],
-                     4: ['CUSTOMER_TYPE'],
-                     5: ['COUNTRY'],
-                     6: ['CUSTOMERS'],
-                     7: ['PRODUCT'],
-                     8: ['PRODUCT_SOURCE_TYPE'],
-                     9: ['POLICIES'],
-                     10: ['CUSTOMER_POLICY_LINK', 'INTERMEDIARY_POLICY_LINK'],
-                     11: ['OPERATIONS']}
+acquisition_order = {1: ['PARTY_ROLE_CODE', 'TRANSACTION_CHANNEL'],
+                     2: ['PARTY_ROLE', 'POLICY_STATUS', 'TRANSACTION_TYPE', 'COUNTRY', 'CUSTOMER_CATEGORY',
+                         'CUSTOMER_STATUS', 'CUSTOMER_TYPE', 'INTERMEDIARY_TYPE', 'PRODUCT'],
+                     3: ['PRODUCT_SOURCE_TYPE'],
+                     4: ['CUSTOMERS'],
+                     5: ['INTERMEDIARIES'],
+                     6: ['POLICIES'],
+                     7: ['CUSTOMER_POLICY_LINK', 'INTERMEDIARY_POLICY_LINK'],
+                     8: ['OPERATIONS']
+                     }
 
 
 class SftpClient:
@@ -124,6 +123,7 @@ class DataUploader:
                         current_date.month) + '{:02d}'.format(current_date.day)
                     print(string_date)
 
+                    print(f'{upload_folder}/{each_filename}', f'{upload_folder}/{file_to_upload}_{string_date}.txt')
                     os.rename(f'{upload_folder}/{each_filename}', f'{upload_folder}/{file_to_upload}_{string_date}.txt')
                     # time.sleep(1)
                     continue
@@ -134,19 +134,10 @@ class DataUploader:
 
     @staticmethod
     def return_currentday_datetime(temp_current_day):
-        current_date = datetime(year=int(temp_current_day[0:4]),  # they do return as INT
+        try:
+            current_date = datetime(year=int(temp_current_day[0:4]),  # they do return as INT
                                 month=int(temp_current_day[4:6]),
                                 day=int(temp_current_day[6:8]))
-        return current_date
-
-'''
-if __name__ == '__main__':
-    host = '10.227.7.120'
-    port = 22
-    username = 'centos'
-    password = 'norkom098'
-    key_file = r'data/axagc-openssh'
-
-    client = SftpClient(host, port,
-                        username, password, key_file)
-'''
+            return current_date
+        except ValueError:
+            raise Exception('currentday.txt content seems to be in improper format. Maybe date value is empty?')

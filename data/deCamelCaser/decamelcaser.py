@@ -1,6 +1,6 @@
 import re
 
-filename = r"filespec_test.txt"
+filename = r"party_role.txt"
 
 
 class deCamelCaser:

@@ -1,8 +1,12 @@
 import sys
+
+from paramiko import SSHException, AuthenticationException
+
 from data.convert_functions import ConvertFunctions
 from data.filespec_extractor import *
 from data.ftp_controller_2 import *
 from data.json_controller import JSONController
+from socket import gaierror
 import time
 
 
@@ -17,7 +21,7 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
-PROGRAM_VERSION = '0.7'
+PROGRAM_VERSION = '0.8'
 
 templates = FileSpecsFinder.get_dict_of_templates()
 connection_template = 'connection_data.json'
@@ -113,8 +117,17 @@ while main_menu:
         if uploadFilesNumber > 0:
 
             # connect to server
-            client = SftpClient(connection1.server_ip, connection1.port,
-                                connection1.username, connection1.password, connection1.key_filename)
+            try:
+                client = SftpClient(connection1.server_ip, connection1.port,
+                                    connection1.username, connection1.password, connection1.key_filename)
+            except gaierror:
+                raise Exception('Invalid server ip address!')
+            except AuthenticationException:
+                raise Exception('Invalid username!')
+            except SSHException:
+                raise Exception('Invalid port, username or password!')
+            except FileNotFoundError:
+                raise Exception('OpenSSH keyfile not found!')
 
             # download currentday and endofday files
             client.download(connection1.remote_currentday, temp_local_currentday)
